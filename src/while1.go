@@ -9,6 +9,6 @@ func main() {
 	var b int = 20
 	for a < b {
 		fmt.Printf("a=%d\n", a)
-		a += 1
+		a++
 	}
 }
