@@ -1,2 +1,2 @@
 # golang
-my first
+all basics with code
