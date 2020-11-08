@@ -1,3 +1,4 @@
+//while loop using for
 package main
 
 import "fmt"
