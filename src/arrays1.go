@@ -24,4 +24,9 @@ func main() {
 	fmt.Println("ages are", age)
 	fmt.Println("heights are", height)
 	fmt.Println("widths are", width)
+
+	//length and capacity functions on arrays
+
+	fmt.Println("lenght of array width", len(width))
+	fmt.Println("capacity of array width", cap(width))
 }
