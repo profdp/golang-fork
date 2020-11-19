@@ -13,8 +13,8 @@ func ms() {
 }
 func mssg(msg string) {
 	for i := 0; i < 5; i++ {
-		fmt.Println("sleep for 3 sec")
-		time.Sleep(time.Second * 3)
+		//fmt.Println("sleep for 3 sec")
+		//time.Sleep(time.Second * 3)
 		fmt.Println("message is ", msg)
 	}
 }
