@@ -31,3 +31,13 @@ func main() {
 
 // durgaprasad@durgaprasad-Lenovo-E49:~/go/golang/src$ go run lookp.go tcp domain
 // Service port  53
+
+// durgaprasad@durgaprasad-Lenovo-E49:~/go/golang/src$ go run lookp.go tcp telnet
+// Service port  23
+
+// durgaprasad@durgaprasad-Lenovo-E49:~/go/golang/src$ go run lookp.go udp telnet
+// Error:  lookup udp/telnet: Servname not supported for ai_socktype
+// exit status 2
+
+// durgaprasad@durgaprasad-Lenovo-E49:~/go/golang/src$ go run lookp.go udp domain
+// Service port  53
