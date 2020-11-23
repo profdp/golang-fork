@@ -8,12 +8,15 @@ import (
 
 const (
 	CONN_HOST = "localhost"
-	CONN_PORT = "3333"
+	//CONN_PORT = "3333"
 	CONN_TYPE = "tcp"
 )
 
 func main() {
 	// Listen for incoming connections.
+	var CONN_PORT string
+	fmt.Println("Enter the port")
+	fmt.Scanf("%s", &CONN_PORT)
 	l, err := net.Listen(CONN_TYPE, CONN_HOST+":"+CONN_PORT)
 	if err != nil {
 		fmt.Println("Error listening:", err.Error())
