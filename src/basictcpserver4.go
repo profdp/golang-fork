@@ -10,8 +10,9 @@ func main() {
 	mes("3333")
 
 	mes("4444")
+
 }
-func mes(portnum string) {
+func mes(portnum string,) {
 
 	fmt.Println("start server using telnet 127.0.0.1 ", portnum)
 
@@ -29,4 +30,5 @@ func mes(portnum string) {
 		fmt.Print("Message Received:", string(message))
 
 	}
+	conn.Close()
 }
