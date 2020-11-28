@@ -39,6 +39,7 @@ func main() {
 		// Handle connections in a new goroutine.
 		go handleRequest(conn, CONN_MSG)
 	}
+	os.Exit(1)
 }
 
 // Handles incoming requests.
