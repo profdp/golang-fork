@@ -18,9 +18,10 @@ func main() {
 	// accept connection
 	conn, _ := lis.Accept()
 
-	// run loop forever (or until ctrl-c)
-
-	for {
+	// run loop some message counter c
+	var c int
+	c = 3
+	for i := 0; i < c; i++ {
 		// get message, output
 		message, _ := bufio.NewReader(conn).ReadString('\n')
 		fmt.Print("Message Received:", string(message))
