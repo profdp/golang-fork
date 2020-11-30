@@ -9,11 +9,8 @@ import (
 )
 
 func main() {
-	cmd := []string{"go", "run", "sample.go"}
+	cmd := []string{"go", "run", "child.go"}
 
-	// The command line tool
-	// "ping" is executed for
-	// 2 seconds
 	proc := exec.Command(cmd[0], cmd[1], cmd[2])
 
 	// The process input is obtained
@@ -29,7 +26,7 @@ func main() {
 	go func() {
 		s := bufio.NewScanner(stdout)
 		for s.Scan() {
-			fmt.Println("Program says:" + s.Text())
+			fmt.Println("Parent says:" + s.Text())
 		}
 	}()
 
@@ -42,7 +39,7 @@ func main() {
 	fmt.Println("Writing input")
 	io.WriteString(stdin, "Hello\n")
 	io.WriteString(stdin, "durga\n")
-	io.WriteString(stdin, "how r uclear\n")
+	io.WriteString(stdin, "how r u\n")
 
 	time.Sleep(time.Second * 2)
 
