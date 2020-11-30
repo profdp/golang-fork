@@ -41,8 +41,8 @@ func main() {
 	// process standard input
 	fmt.Println("Writing input")
 	io.WriteString(stdin, "Hello\n")
-	io.WriteString(stdin, "Golang\n")
-	io.WriteString(stdin, "is awesome\n")
+	io.WriteString(stdin, "durga\n")
+	io.WriteString(stdin, "how r u\n")
 
 	time.Sleep(time.Second * 2)
 
