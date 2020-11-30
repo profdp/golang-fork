@@ -10,6 +10,7 @@ import (
 )
 
 func main() {
+
 	cmd := []string{"go", "run", "conest.go"}
 
 	proc := exec.Command(cmd[0], cmd[1], cmd[2])
@@ -23,7 +24,7 @@ func main() {
 	go func() {
 		s := bufio.NewScanner(stdout)
 		for s.Scan() {
-			fmt.Println("Parent says:" + s.Text())
+			fmt.Println("Parent says to:" + cmd[2] + "->" + s.Text())
 		}
 	}()
 	// Start the process
@@ -49,7 +50,7 @@ func main() {
 	for i := 0; i < c; i++ {
 		// get message, output
 		message, _ := bufio.NewReader(conn).ReadString('\n')
-		fmt.Print("Message Received:", string(message))
+		fmt.Print("Message Received from:"+cmd[2]+"is=", string(message))
 
 	}
 	conn.Close()
