@@ -29,9 +29,11 @@ func main() {
 	// Start the process
 	proc.Start()
 
-	portnum := "3333"
-	// fmt.Println("enter the port number")
-	// fmt.Scanf("%s", &portnum)
+	var portnum string
+
+	//portnum := "3333"
+	fmt.Println("enter the port number")
+	fmt.Scanf("%s", &portnum)
 	io.WriteString(stdin, portnum+"\n")
 	// 	*******************************************
 	time.Sleep(time.Second * 2)
