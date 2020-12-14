@@ -58,3 +58,22 @@ func main() {
 	proc.Process.Kill()
 
 }
+
+//OUTPUT---->>>>>>>
+// durgaprasad@durgaprasad-Lenovo-E49:~/go/golang/src/IPC$ go run parent_conest.go
+// enter the port number
+// 3333
+// Parent says to:conest.go->start connection using telnet 127.0.0.1  3333
+
+// Message Received from:conest.gois=hi1
+// Message Received from:conest.gois=hi2
+// Message Received from:conest.gois=hi3
+
+// durgaprasad@durgaprasad-Lenovo-E49:~/go/golang$ telnet 127.0.0.1 3333
+// Trying 127.0.0.1...
+// Connected to 127.0.0.1.
+// Escape character is '^]'.
+// hi1
+// hi2
+// hi3
+// Connection closed by foreign host.
