@@ -15,36 +15,41 @@ type Block struct {
 }
 
 func main() {
-	genesisTransactions := []string{"Izzy sent Will 50 bitcoin", "Will sent Izzy 30 bitcoin"}
-	genesisBlock := NewBlock(genesisTransactions, []byte{})
+	genesisTransactions := []string{"50", "30"}
+	var name = "GT"
+	genesisBlock := NewBlock(genesisTransactions, []byte{}, name)
 	fmt.Println("--- First Block ---")
 	printBlockInformation(genesisBlock)
 
-	block2Transactions := []string{"John sent Izzy 30 bitcoin"}
-	block2 := NewBlock(block2Transactions, genesisBlock.Hash)
+	block2Transactions := []string{"40", "30"}
+	name = "B2T"
+	block2 := NewBlock(block2Transactions, genesisBlock.Hash, name)
 	fmt.Println("--- Second Block ---")
 	printBlockInformation(block2)
 
-	block3Transactions := []string{"Will sent Izzy 45 bitcoin", "Izzy sent Will 10 bitcoin"}
-	block3 := NewBlock(block3Transactions, block2.Hash)
+	block3Transactions := []string{"30", "30"}
+	name = "B3T"
+	block3 := NewBlock(block3Transactions, block2.Hash, name)
 	fmt.Println("--- Third Block ---")
 	printBlockInformation(block3)
 }
 
-func NewBlock(transactions []string, prevHash []byte) *Block {
+func NewBlock(transactions []string, prevHash []byte, name string) *Block {
 	currentTime := time.Now()
+
 	return &Block{
 		timestamp:    currentTime,
 		transactions: transactions,
 		prevHash:     prevHash,
-		Hash:         NewHash(currentTime, transactions, prevHash),
+		Hash:         NewHash(currentTime, transactions, prevHash, name),
 	}
 }
 
-func NewHash(time time.Time, transactions []string, prevHash []byte) []byte {
+func NewHash(time time.Time, transactions []string, prevHash []byte, name string) []byte {
 	input := append(prevHash, time.String()...)
 	for transaction := range transactions {
 		input = append(input, string(rune(transaction))...)
+		input = append(input, name...)
 	}
 	hash := sha256.Sum256(input)
 	return hash[:]
