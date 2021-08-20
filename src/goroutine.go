@@ -13,7 +13,8 @@ func ms() {
 }
 func main() {
 	ms()
-	fmt.Println("goroutine")
+	fmt.Println("before  goroutine")
 	go ms()
 	time.Sleep(time.Second)
+	fmt.Println("after goroutine")
 }

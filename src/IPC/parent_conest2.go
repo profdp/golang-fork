@@ -10,8 +10,8 @@ import (
 )
 
 func main() {
-	ph := 5
-	for ph = 0; ph < 5; ph++ {
+	//ph := 5
+	for ph := 0; ph < 5; ph++ {
 		mes()
 	}
 }
