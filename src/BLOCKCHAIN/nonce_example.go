@@ -21,7 +21,7 @@ func main() {
 	hash1 := sha256.Sum256(nb)
 	fmt.Println("hash1[0]=", hash1[0])
 	//checking for target value
-	target := 222
+	target := 255
 	if int(hash1[0]) > target {
 		fmt.Println("yes grater than target")
 	} else {
